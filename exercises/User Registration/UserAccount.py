@@ -11,3 +11,13 @@ class UserAccount(User.User):
 
     def printUserInfo(self):
         print("User Details: \nName: ", self.name, "\nAge: ", self.age, "\nMobile: ", self.mobile, "\nEmail: ", self.email, "\nUserName: ", self.userid, "\nPassword: ", self.password)
+
+    def toDictObject(self):
+        return {
+            "name": self.name,
+            "age": self.age,
+            "mobile": self.mobile,
+            "email": self.email,
+            "userid": self.userid,
+            "password": self.password
+        }

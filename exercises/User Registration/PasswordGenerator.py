@@ -28,10 +28,10 @@ class PasswordGenerator:
     
     def generateMediumPassword(self):
         password = list(self.userAccount.name)
-        randomIndex = random.randint(0, len(self.userAccount.name))
-        password[randomIndex] = self.symbols[random.randint(0, len(self.symbols))]
-        randomIndex = random.randint(0, len(self.userAccount.name))
-        password[randomIndex] = str(self.numericals[random.randint(0, len(self.numericals))])
+        randomIndex = random.randint(0, len(self.userAccount.name)-1)
+        password[randomIndex] = self.symbols[random.randint(0, len(self.symbols)-1)]
+        randomIndex = random.randint(0, len(self.userAccount.name)-1)
+        password[randomIndex] = str(self.numericals[random.randint(0, len(self.numericals)-1)])
         return "".join(password)
 
     def generateStrongPassword(self):
