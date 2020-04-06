@@ -23,7 +23,7 @@ class TestUserManagementSystem(unittest.TestCase):
         self.logger.debug("User Account Details: {ua}".format(ua=userAccount.toDictObject()))
         self.assertNotEqual(userAccount, None)
 
-    def test_user_account_creation_with_invalid_values(self):
+    def test_user_account_creation_with_invalid_age_value(self):
         user_input = [
             'Venkatesh M',
             'test',
@@ -35,6 +35,4 @@ class TestUserManagementSystem(unittest.TestCase):
 
         ums = UserManagementSystem.UserManagementSystem()
         with patch('builtins.input', side_effect=user_input):
-            userAccount = ums.addUser()
-        self.logger.debug("User Account Details: {ua}".format(ua=userAccount.toDictObject()))
-        self.assertNotEqual(userAccount, None)
+            self.assertRaises(ValueError, ums.addUser)

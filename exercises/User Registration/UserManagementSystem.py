@@ -14,7 +14,10 @@ class UserManagementSystem:
 
     def addUser(self):
         name = input("Enter Name: ")
-        age = int(input("Enter Age: "))
+        try:
+            age = int(input("Enter Age: "))
+        except ValueError as ve:
+            raise ve             
         mobile = int(input("Enter Mobile: "))
         email = input("Enter Email: ")
         userid = input("Enter Username: ")
@@ -94,4 +97,4 @@ def main():
     ums.displayAvailableOptions()
     ums.chooseOperation(int(input("Choose a option: ")))
 
-main()
+# main()
